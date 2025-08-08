@@ -524,8 +524,9 @@
          <div class="row justify-content-center py-5">
             <div class="col-lg-11 col-xl-10 py-0 py-md-5">
                <div class="row redes">
+
                   <div class="col-12 col-lg text-center text-lg-left mb-4 mb-lg-0">
-                     <div class="d-block d-md-inline" style="margin-right: 1rem;">
+                     <div class="d-block d-md-inline mb-2 mb-md-0 me-md-3">
                         <a href="https://api.whatsapp.com/send/?phone=5551998219221" target="_blank">
                            <i class="fab fa-whatsapp"></i> (51) 99821.9221
                         </a>
@@ -535,11 +536,14 @@
                            <i class="fab fa-whatsapp"></i> (51) 98046.3826
                         </a>
                      </div>
-                     <div class="d-flex align-items-center mt-4">
-                        <i class="fas fa-map-marker-alt"></i> R. Oswaldo de Souza Gomes 114 - Camaquã/RS - CEP 96780-036
+                     <div
+                        class="d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-start mt-4 text-center text-lg-left">
+                        <i class="fas fa-map-marker-alt me-2 mb-2 mb-lg-0"></i>
+                        <span>R. Oswaldo de Souza Gomes 114 - Camaquã/RS - CEP 96780-036</span>
                      </div>
                   </div>
-                  <div class="col-12 col-lg text-center text-lg-right icon">
+
+                  <div class="col-12 col-lg text-center text-lg-right icon mt-3 mt-lg-0">
                      <a href="https://www.facebook.com/vencatocasas" target="_blank" class="fab fa-facebook-f mx-2"></a>
                      <a href="https://www.instagram.com/casasvencato" target="_blank" class="fab fa-instagram mx-2"></a>
                      <a href="https://www.tiktok.com/@vencato.casas?_t=ZM-8x7N95U0cYn&_r=1" target="_blank"
@@ -550,12 +554,13 @@
             </div>
          </div>
       </div>
+
       <div class="copy">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-lg-11 col-xl-10">
                   <div class="row">
-                     <div class="col-12 col-lg text-center text-lg-left">
+                     <div class="col-12 col-lg text-center text-lg-left mb-2 mb-lg-0">
                         © Vencato Casas. <a href="politica-de-privacidade.html">Política de Privacidade</a>
                      </div>
                      <div class="col-12 col-lg text-center text-lg-right">
@@ -627,7 +632,6 @@
 
    <script type="text/javascript">
       $(document).ready(function () {
-         // Ligar o botão de WhatsApp ao novo link
          $('#novo-buttom').floatingWhatsApp({
             phone: '(51) 99821.9221',
             popupMessage: 'De que forma podemos auxiliar?',
@@ -644,7 +648,6 @@
             const original = img.getAttribute('data-original');
             const planta = img.getAttribute('data-planta');
 
-            // Alterna entre imagem da casa e planta com nomes de arquivos sem espaços
             if (img.src.endsWith(original)) {
                img.src = planta;
                this.textContent = 'Ver fachada';
@@ -656,7 +659,7 @@
       });
    </script>
    <script>
-      // Ver planta / fachada
+
       document.querySelectorAll('.btn-ver-planta').forEach(function (button) {
          button.addEventListener('click', function () {
             const img = this.previousElementSibling.querySelector('img');
@@ -673,7 +676,6 @@
          });
       });
 
-      // Zoom + pan com navegação fluida e reset automático
       document.querySelectorAll('.zoom-container').forEach(function (container) {
          const img = container.querySelector('img');
          let scale = 1;
@@ -706,8 +708,7 @@
             translateX += dx;
             translateY += dy;
 
-            // Limites (opcional – evitar que a imagem fuja demais)
-            const maxTranslate = 100; // você pode ajustar esse limite
+            const maxTranslate = 100;
             translateX = Math.max(Math.min(translateX, maxTranslate), -maxTranslate);
             translateY = Math.max(Math.min(translateY, maxTranslate), -maxTranslate);
 
@@ -735,7 +736,7 @@
       });
    </script>
    <script>
-      // Galeria com setas (Casa com múltiplas imagens)
+
       document.querySelectorAll('.casa-com-galeria').forEach(function (container) {
          const img = container.querySelector('img');
          const imagens = JSON.parse(container.getAttribute('data-imagens'));
@@ -750,7 +751,6 @@
             btnPlanta.textContent = 'Ver planta';
          }
 
-         // Setas
          const setaEsquerda = container.querySelector('.seta.esquerda');
          const setaDireita = container.querySelector('.seta.direita');
 
@@ -768,7 +768,6 @@
             atualizarImagem();
          });
 
-         // Botão "Ver planta"
          btnPlanta.addEventListener('click', function () {
             const isPlanta = img.getAttribute('data-is-planta') === 'true';
 
@@ -777,14 +776,13 @@
                img.setAttribute('data-is-planta', 'true');
                this.textContent = 'Ver fachada';
             } else {
-               // volta pra imagem atual da galeria
+
                img.src = imagens[index];
                img.setAttribute('data-is-planta', 'false');
                this.textContent = 'Ver planta';
             }
          });
 
-         // Inicialização
          atualizarImagem();
       });
    </script>
