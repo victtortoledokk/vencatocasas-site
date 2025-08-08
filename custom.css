@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: 'Roboto Condensed', sans-serif;
+
+  /* Cores padrão baseadas na identidade visual */
+  --color-primary: #002C54;
+  /* Azul escuro da marca */
+  --color-secondary: #5FA0D6;
+  /* Azul claro */
+  --color-tertiary: #FFFFFF;
+  /* Branco */
+  --color-text: #002C54;
+  /* Texto principal */
+  --color-back: #F7F9FB;
+  /* Fundo claro */
+  --color-dark: #011A36;
+  /* Tons escuros */
+  --color-light: #D8E6F2;
+  /* Tons leves */
+
+  /* Botões */
+  --btn-back: var(--color-secondary);
+  --btn-back-hover: #5FA0D6;
+  --btn-color: var(--color-tertiary);
+  --btn-color-hover: var(--btn-color);
+
+  /* Top bar */
+  --bar-back: var(--color-primary);
+  --bar-color: rgba(255, 255, 255, 0.7);
+  --bar-icon-color: var(--color-secondary);
+  --bar-icon-redes-color: var(--color-secondary);
+  --bar-icon-redes-color-hover: var(--color-secondary);
+
+  /* Footer */
+  --footer-back: var(--color-primary);
+  --footer-color: rgba(255, 255, 255, 0.7);
+  --footer-copy-back: var(--footer-back);
+  --footer-copy-color: rgba(255, 255, 255, 0.5);
+  --footer-icon-color: rgba(255, 255, 255, 0.7);
+  --footer-icon-redes-color: rgba(255, 255, 255, 0.7);
+  --footer-icon-redes-color-hover: rgba(255, 255, 255, 0.9);
+
+  /* Títulos */
+  --title-color: var(--color-text);
+  --title-line-color: var(--color-secondary);
+  --title-line-size: 150px;
+  --title-post-color: var(--color-text);
+
+  --title-internal-color: var(--title-post-color);
+  --title-internal-back: var(--color-light);
+}
+
+body {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  background-color: var(--color-back);
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+header .navbar-brand img {
+  max-height: 350px;
+}
+
+header .navbar-nav a {
+  font-size: 1.4em;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-tertiary);
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 60px;
+  font-size: 1em;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: var(--color-secondary);
+  color: var(--color-tertiary);
+}
+
+.btn-secondary {
+  background: var(--color-light);
+  color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: var(--btn-back-hover);
+}
+
+footer {
+  background: var(--footer-back);
+  color: var(--footer-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--title-color);
+}
+
+.title span {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--title-line-color);
+}
+
+/* Estilo para o botão do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+.zoom-container {
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  height: auto;
+}
+
+.zoom-container img {
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+  user-select: none;
+  pointer-events: none;
+  /* previne cliques duplos indesejados */
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 44, 84, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 6px 12px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.seta:hover {
+  background-color: rgba(0, 44, 84, 0.9);
+}
+
+.seta.esquerda {
+  left: 10px;
+}
+
+.seta.direita {
+  right: 10px;
+}
