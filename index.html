@@ -27,28 +27,41 @@
 
 <body>
 
-   <header>
-      <div id="bar" class="d-none d-md-block">
+    <header>
+      <div id="bar">
          <div class="container">
             <div class="row pr-1">
                <div class="col-12 text-center pr-4">
-                  <h3 class="text-white p-0 mb-3 mb-md-0 wow fadeInLeft" style="font-size: 2.0rem;">Bem vindo a Vencato
-                     Casas!</h3>
+                  <h3 class="text-white p-0 mb-3 mb-md-0 wow fadeInLeft" style="font-size: 2.0rem;">
+                     Bem vindo a Vencato Casas!
+                  </h3>
                </div>
             </div>
          </div>
       </div>
+
       <nav id="top" class="navbar navbar-expand-lg">
-         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="images/layout/logo.png" alt="Vencato Casas"></a>
-            <button type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false"
-               aria-label="Navegação" class="navbar-toggler mt-0"><span></span><span></span><span></span></button>
-            <div class="navbar-collapse collapse justify-content-end align-items-center w-100" id="menu">
-               <ul class="nav navbar-nav">
-                  <li class="active"><a href="index.html">HOME</a></li>
-                  <li><a href="galeria.html">GALERIA</a></li>
-                  <li><a href="contato.html">CONTATO</a></li>
-               </ul>
+         <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="d-flex align-items-center w-100 justify-content-between">
+ 
+               <a href="index.html" class="navbar-brand mb-0">
+                  <img src="images/layout/logo.png" alt="Vencato Casas" class="logo-mobile">
+               </a>
+
+               <div class="d-flex align-items-center">
+                  <button type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+                     aria-expanded="false" aria-label="Navegação" class="navbar-toggler mt-0">
+                     <span></span><span></span><span></span>
+                  </button>
+                  <div class="navbar-collapse collapse mobile-menu ml-2" id="menu">
+                     <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mx-1"><a href="index.html" class="nav-link">HOME</a></li>
+                        <li class="nav-item mx-1"><a href="galeria.html" class="nav-link">GALERIA</a></li>
+                        <li class="nav-item mx-1"><a href="contato.html" class="nav-link">CONTATO</a></li>
+                     </ul>
+                  </div>
+               </div>
             </div>
          </div>
       </nav>
@@ -307,3 +320,4 @@
 </body>
 
 </html>
+
